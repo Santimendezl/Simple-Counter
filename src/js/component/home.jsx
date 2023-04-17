@@ -1,24 +1,22 @@
 import React from "react";
+import SecondsCounter from "./secondscounter.jsx";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock} from '@fortawesome/free-regular-svg-icons';
+
+
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className=" bg-dark text-white d-flex justify-content-around m-3 py-5 display-1">
+			<FontAwesomeIcon icon={faClock} size="lg" />
+			<SecondsCounter seconds={Math.floor(props.seconds/100000)}/>
+			<SecondsCounter seconds={Math.floor(props.seconds/10000)}/>
+			<SecondsCounter seconds={Math.floor(props.seconds/1000)}/>
+			<SecondsCounter seconds={Math.floor(props.seconds/100)}/>
+			<SecondsCounter seconds={Math.floor(props.seconds/10)}/>
+			<SecondsCounter seconds={props.seconds}/>
 		</div>
 	);
 };

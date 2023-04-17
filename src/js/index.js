@@ -8,5 +8,13 @@ import "../styles/index.css";
 //import your own components
 import Home from "./component/home.jsx";
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+// Función Render con incremento
+let num = 0;
+setInterval(function() {
+
+            ReactDOM.render( < Home seconds = {
+                    num
+                }
+                / > , document.querySelector("#app"))
+                num++;
+            }, 1000);
