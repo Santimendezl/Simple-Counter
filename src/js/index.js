@@ -10,7 +10,7 @@ import Home from "./component/home.jsx";
 
 // Función Render con incremento y decremento
 let num = 0;
-let num2 = 20;
+let num2 = 25;
 setInterval(function() {
             ReactDOM.render( < Home seconds = {
                     num
